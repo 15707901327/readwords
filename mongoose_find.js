@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://localhost/words');
 
-var wordSchema = require('./word_schema').wordSchema;
+var wordSchema = require('./ch16/word_schema').wordSchema;
 var Words = mongoose.model('words',wordSchema);
 setTimeout(function () {
     mongoose.disconnect();

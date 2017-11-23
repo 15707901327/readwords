@@ -3,7 +3,9 @@ var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 var app = express();
 app.use(cookieParser());
-app.use(cookieSession({secret:'MAGICALEXPRESSKEY'}));
+app.use(cookieSession({
+    secret:'MAGICALEXPRESSKEY'
+}));
 app.get('/library',function (req, res) {
     console.log(req.cookies);
     if(req.session.restricted){

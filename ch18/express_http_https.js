@@ -9,8 +9,8 @@ var options = {
     // cert:fs.readFileSync('ssl/server.crt')
 };
 
-http.createServer(app).listen(80);
-https.createServer(options,app).listen(443);
-app.get('/',function () {
-
+http.createServer(app).listen(8082);
+https.createServer(options,app).listen(8081);
+app.get('/',function (req,res) {
+    res.send('Hello from Express');
 });

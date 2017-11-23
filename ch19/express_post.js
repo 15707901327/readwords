@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser());
-app.get('/user',function (req, res) {
+app.get('/',function (req, res) {
    var response = '<form method="post">' +
        'First:<input type="text" name="first"/><br/>' +
        'Last:<input type="text" name="last"/><br/>' +
@@ -10,7 +10,7 @@ app.get('/user',function (req, res) {
     res.send(response);
 });
 
-app.post('/user',function (req, res) {
+app.post('/',function (req, res) {
     var response = '<form method="post">' +
         'First:<input type="text" name="first"/><br/>' +
         'Last:<input type="text" name="last"/><br/>' +

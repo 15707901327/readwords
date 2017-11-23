@@ -16,8 +16,8 @@ wordSchema.method.startsWith = function (letter) {
     return this.first === letter;
 };
 exports.wordSchema = wordSchema;
-// console.log("Require Paths:");
-// console.log(wordSchema.requiredPaths());
-// console.log("Indexes:");
-// console.log(wordSchema.indexes());
+console.log("Require Paths:");
+console.log(wordSchema.requiredPaths());
+console.log("Indexes:");
+console.log(wordSchema.indexes());
 
