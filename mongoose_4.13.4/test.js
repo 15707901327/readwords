@@ -1,14 +1,10 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', { useMongoClient: true });
-mongoose.Promise = global.Promise;
+var Schema = mongoose.Schema;
 
-var Cat = mongoose.model('Cat', { name: String });
-
-var kitty = new Cat({ name: 'Zildjian' });
-kitty.save(function (err) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('meow');
-    }
+var animalSchema = new Schema({
+    name: String,
+    type: String,
+    tags: { type: [String], index: true } // field level
 });
+
+animalSchema.index({ name: 1, type: -1 });
